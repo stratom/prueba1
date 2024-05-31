@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: moca5
+  #  annotations:
+  #    k8s.v1.cni.cncf.io/networks: host-net1-ens729106
+spec:
+  containers:
+  - name: moca5
+    image: iad.ocir.io/ociokedev/oraclelinux:8
+    command: [ "/bin/bash", "-ce", "{ trap 'echo received sigterm' SIGTERM; sleep 7200; }" ]
+
+
